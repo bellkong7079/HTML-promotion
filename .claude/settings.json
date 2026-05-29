@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(start \"c:\\\\Users\\\\jb733\\\\OneDrive\\\\바탕 화면\\\\promotion\\\\index.html\")",
+      "Bash(ipconfig)",
+      "Bash(findstr \"IPv4\")",
+      "Bash(vercel --version)",
+      "Bash(vercel --yes)",
+      "Bash(vercel login *)",
+      "WebFetch(domain:promotion-lake-ten.vercel.app)",
+      "Bash(vercel --prod)"
+    ]
+  }
+}

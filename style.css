@@ -1,0 +1,453 @@
+/* ===== CSS 변수 ===== */
+:root {
+  --primary:        #f472b6;
+  --primary-light:  #fce7f3;
+  --secondary:      #a78bfa;
+  --secondary-light:#ede9fe;
+  --bg:             #fff9fb;
+  --surface:        #ffffff;
+  --text:           #1e1b2e;
+  --text-muted:     #6b7280;
+  --radius:         20px;
+  --shadow:         0 4px 24px rgba(244, 114, 182, 0.12);
+  --shadow-card:    0 2px 16px rgba(0, 0, 0, 0.07);
+}
+
+/* ===== 언어 선택 바 ===== */
+.lang-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  background: rgba(255, 249, 251, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid #fce7f3;
+  padding: 0;
+  /* Dynamic Island / 노치 영역 확보 */
+  padding-top: env(safe-area-inset-top);
+}
+
+.lang-btn {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  padding: 11px 2px;
+  cursor: pointer;
+  transition: color 0.15s, background 0.15s;
+  white-space: nowrap;
+}
+
+.lang-btn.active {
+  color: var(--primary);
+  background: var(--primary-light);
+  font-weight: 700;
+}
+
+.lang-btn:active {
+  opacity: 0.7;
+}
+
+/* ===== 리셋 & 폰 기본 설정 ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  /* 더블탭 줌 방지 */
+  touch-action: manipulation;
+}
+
+html {
+  font-size: 16px;            /* iOS 자동 확대 방지 */
+  overflow-x: clip;           /* body 대신 html에서만 가로 스크롤 차단 */
+}
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  max-width: 430px;           /* iPhone Pro Max 기준 */
+  margin: 0 auto;
+}
+
+/* ===== HERO ===== */
+.hero {
+  background: linear-gradient(145deg, #fce7f3 0%, #ede9fe 50%, #fef3c7 100%);
+  padding: 52px 20px 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50px; right: -50px;
+  width: 180px; height: 180px;
+  border-radius: 50%;
+  background: rgba(244, 114, 182, 0.15);
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -35px; left: -35px;
+  width: 130px; height: 130px;
+  border-radius: 50%;
+  background: rgba(167, 139, 250, 0.15);
+  pointer-events: none;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: var(--primary);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 5px 14px;
+  border-radius: 999px;
+  margin-bottom: 18px;
+}
+
+.hero-title {
+  font-size: 32px;
+  font-weight: 900;
+  line-height: 1.2;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.hero-title span {
+  font-size: 42px;
+  display: block;
+  margin-top: 4px;
+}
+
+.hero-sub {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 28px;
+}
+
+.hero-deadline {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  box-shadow: var(--shadow);
+  display: inline-block;
+  width: 100%;
+}
+
+.hero-deadline .label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.countdown {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  justify-content: center;
+}
+
+.time-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 52px;
+}
+
+.time-block span {
+  font-size: 30px;
+  font-weight: 900;
+  color: var(--primary);
+  line-height: 1;
+}
+
+.time-block small {
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-top: 3px;
+}
+
+.sep {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--primary);
+  padding-bottom: 16px;
+}
+
+.ended {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+/* ===== 공통 섹션 ===== */
+.section {
+  padding: 32px 20px;
+}
+
+.section-title {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.section-sub {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+/* ===== 나눔 기간 ===== */
+.period-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  box-shadow: var(--shadow-card);
+  border: 1.5px solid #fce7f3;
+  margin-top: 14px;
+}
+
+.period-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  gap: 8px;
+}
+
+.period-label {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.period-date {
+  font-size: 13px;
+  font-weight: 700;
+  text-align: right;
+}
+
+.period-date.highlight {
+  color: var(--primary);
+}
+
+.period-divider {
+  height: 1px;
+  background: #f3e8ff;
+  margin: 2px 0;
+}
+
+/* ===== 굿즈 목록 ===== */
+.goods-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.goods-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 14px 12px;
+  box-shadow: var(--shadow-card);
+  border: 1.5px solid #f5f3ff;
+  /* 터치 피드백 */
+  transition: transform 0.15s;
+}
+
+.goods-card:active {
+  transform: scale(0.97);
+}
+
+.goods-img {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 10px;
+  background: var(--secondary-light);
+  border-radius: 14px;
+  padding: 10px 0;
+}
+
+.goods-name {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.goods-desc {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.goods-qty {
+  display: inline-block;
+  background: var(--primary-light);
+  color: var(--primary);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+/* ===== 참여 방법 ===== */
+.steps-section {
+  background: linear-gradient(135deg, #fce7f3 0%, #ede9fe 100%);
+  max-width: 100%;
+  padding: 32px 20px;
+}
+
+.steps {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.step {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  box-shadow: var(--shadow-card);
+}
+
+.step-num {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-content strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+
+.step-content p {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* ===== SNS 버튼 ===== */
+.sns-section {
+  text-align: center;
+}
+
+.sns-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.sns-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 18px 24px;       /* 터치 영역 넉넉하게 */
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  min-height: 56px;          /* 최소 터치 타겟 */
+  transition: transform 0.15s;
+}
+
+.sns-btn:active {
+  transform: scale(0.97);
+}
+
+.sns-btn.instagram {
+  background: linear-gradient(135deg, #f472b6, #a78bfa);
+  color: #fff;
+}
+
+.sns-btn.kakao {
+  background: #fee500;
+  color: #3c1e1e;
+}
+
+.sns-icon {
+  font-size: 20px;
+}
+
+/* ===== 유의사항 ===== */
+.notice-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.notice-list li {
+  font-size: 13px;
+  color: var(--text-muted);
+  padding-left: 18px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.notice-list li::before {
+  content: '·';
+  position: absolute;
+  left: 6px;
+  font-weight: 900;
+  color: var(--primary);
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: var(--text);
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  padding: 28px 20px;
+  /* iPhone 홈바 공간 확보 */
+  padding-bottom: calc(28px + env(safe-area-inset-bottom));
+  font-size: 13px;
+}
+
+.footer p + p {
+  margin-top: 6px;
+}
+
+.footer-name {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.footer-name strong {
+  color: var(--primary);
+}

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#fce7f3" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <title>굿즈 무료 나눔 🎁</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== 언어 선택 바 ===== -->
+  <div class="lang-bar">
+    <button class="lang-btn" data-lang="id">🇮🇩 ID</button>
+    <button class="lang-btn" data-lang="en">🇺🇸 EN</button>
+    <button class="lang-btn" data-lang="ko">🇰🇷 KR</button>
+    <button class="lang-btn" data-lang="ja">🇯🇵 JP</button>
+    <button class="lang-btn" data-lang="zh">🇨🇳 中文</button>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-badge" data-i18n="heroBadge">FREE GIVEAWAY</div>
+    <h1 class="hero-title">
+      <span data-i18n="heroTitle">굿즈 무료 나눔</span><br />
+      <span>🎁</span>
+    </h1>
+    <p class="hero-sub" data-i18n="heroSub">소중한 분들을 위해 준비했어요 ✨</p>
+    <div class="hero-deadline">
+      <span class="label" data-i18n="countdownLabel">마감까지</span>
+      <div id="countdown" class="countdown">
+        <div class="time-block"><span id="days">--</span><small data-i18n="unitDay">일</small></div>
+        <div class="sep">:</div>
+        <div class="time-block"><span id="hours">--</span><small data-i18n="unitHour">시간</small></div>
+        <div class="sep">:</div>
+        <div class="time-block"><span id="mins">--</span><small data-i18n="unitMin">분</small></div>
+        <div class="sep">:</div>
+        <div class="time-block"><span id="secs">--</span><small data-i18n="unitSec">초</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 나눔 기간 ===== -->
+  <section class="section period-section">
+    <h2 class="section-title" data-i18n="periodTitle">📅 나눔 기간</h2>
+    <div class="period-card">
+      <div class="period-row">
+        <span class="period-label" data-i18n="periodStart">신청 시작</span>
+        <!-- ✏️ 날짜를 수정하세요 -->
+        <span class="period-date" data-i18n="startDate">2025년 6월 1일 (일)</span>
+      </div>
+      <div class="period-divider"></div>
+      <div class="period-row">
+        <span class="period-label" data-i18n="periodEnd">신청 마감</span>
+        <!-- ✏️ 날짜를 수정하세요 -->
+        <span class="period-date highlight" data-i18n="endDate">2025년 6월 7일 (토) 자정</span>
+      </div>
+      <div class="period-row">
+        <span class="period-label" data-i18n="periodAnnounce">당첨 발표</span>
+        <!-- ✏️ 날짜를 수정하세요 -->
+        <span class="period-date" data-i18n="announceDate">2025년 6월 9일 (월)</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 굿즈 목록 ===== -->
+  <section class="section">
+    <h2 class="section-title" data-i18n="goodsTitle">🛍️ 나눔 굿즈</h2>
+    <p class="section-sub" data-i18n="goodsSub">각 굿즈는 1개씩 나눔됩니다</p>
+    <div class="goods-grid">
+
+      <!-- ✏️ 굿즈 카드를 복사해서 추가/수정하세요 -->
+      <div class="goods-card">
+        <div class="goods-img">🎀</div>
+        <div class="goods-info">
+          <p class="goods-name" data-i18n="goods1Name">굿즈 이름 1</p>
+          <p class="goods-desc" data-i18n="goods1Desc">간단한 설명을 입력하세요</p>
+          <span class="goods-qty" data-i18n="goodsQty">1개</span>
+        </div>
+      </div>
+
+      <div class="goods-card">
+        <div class="goods-img">✨</div>
+        <div class="goods-info">
+          <p class="goods-name" data-i18n="goods2Name">굿즈 이름 2</p>
+          <p class="goods-desc" data-i18n="goods2Desc">간단한 설명을 입력하세요</p>
+          <span class="goods-qty" data-i18n="goodsQty">1개</span>
+        </div>
+      </div>
+
+      <div class="goods-card">
+        <div class="goods-img">🌸</div>
+        <div class="goods-info">
+          <p class="goods-name" data-i18n="goods3Name">굿즈 이름 3</p>
+          <p class="goods-desc" data-i18n="goods3Desc">간단한 설명을 입력하세요</p>
+          <span class="goods-qty" data-i18n="goodsQty">1개</span>
+        </div>
+      </div>
+
+      <div class="goods-card">
+        <div class="goods-img">💌</div>
+        <div class="goods-info">
+          <p class="goods-name" data-i18n="goods4Name">굿즈 이름 4</p>
+          <p class="goods-desc" data-i18n="goods4Desc">간단한 설명을 입력하세요</p>
+          <span class="goods-qty" data-i18n="goodsQty">1개</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== 참여 방법 ===== -->
+  <section class="section steps-section">
+    <h2 class="section-title" data-i18n="stepsTitle">📝 참여 방법</h2>
+    <ol class="steps">
+      <!-- ✏️ 신청 방법에 맞게 수정하세요 -->
+      <li class="step">
+        <span class="step-num">1</span>
+        <div class="step-content">
+          <strong data-i18n="step1Title">팔로우</strong>
+          <p data-i18n="step1Desc">인스타그램 계정을 팔로우해 주세요</p>
+        </div>
+      </li>
+      <li class="step">
+        <span class="step-num">2</span>
+        <div class="step-content">
+          <strong data-i18n="step2Title">DM 신청</strong>
+          <p data-i18n="step2Desc">원하는 굿즈 이름을 DM으로 보내주세요</p>
+        </div>
+      </li>
+      <li class="step">
+        <span class="step-num">3</span>
+        <div class="step-content">
+          <strong data-i18n="step3Title">당첨 확인</strong>
+          <p data-i18n="step3Desc">발표일에 스토리 또는 DM으로 안내드려요</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ===== SNS 링크 ===== -->
+  <section class="section sns-section">
+    <h2 class="section-title" data-i18n="snsTitle">📲 신청 채널</h2>
+    <div class="sns-buttons">
+      <!-- ✏️ href에 실제 SNS 링크를 입력하세요 -->
+      <a href="https://instagram.com/여기에_아이디_입력" target="_blank" rel="noopener" class="sns-btn instagram">
+        <span class="sns-icon">📸</span>
+        Instagram
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== 유의사항 ===== -->
+  <section class="section notice-section">
+    <h2 class="section-title" data-i18n="noticeTitle">📌 유의사항</h2>
+    <ul class="notice-list">
+      <!-- ✏️ 유의사항을 수정하세요 -->
+      <li data-i18n="notice1">나눔은 완전 무료이며 배송비도 없습니다</li>
+      <li data-i18n="notice2">1인 1개 굿즈만 신청 가능합니다</li>
+      <li data-i18n="notice3">당첨자는 발표일 이후 3일 내 주소를 보내주셔야 합니다</li>
+      <li data-i18n="notice4">미응답 시 다음 순번으로 넘어갑니다</li>
+    </ul>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <p data-i18n="footerThanks">💛 함께해 주셔서 감사해요</p>
+    <!-- ✏️ 주최자 이름/닉네임을 입력하세요 -->
+    <p class="footer-name">by <strong>@닉네임</strong></p>
+  </footer>
+
+  <script>
+    /* ===================================================
+       번역 데이터
+       굿즈 이름/설명은 아래 ✏️ 표시 항목에서 수정하세요
+    =================================================== */
+    const TRANSLATIONS = {
+      ko: {
+        heroBadge:       'FREE GIVEAWAY',
+        heroTitle:       '굿즈 무료 나눔',
+        heroSub:         '소중한 분들을 위해 준비했어요 ✨',
+        countdownLabel:  '마감까지',
+        unitDay: '일', unitHour: '시간', unitMin: '분', unitSec: '초',
+        periodTitle:     '📅 나눔 기간',
+        periodStart:     '신청 시작',
+        periodEnd:       '신청 마감',
+        periodAnnounce:  '당첨 발표',
+        startDate:       '2025년 6월 1일 (일)',    // ✏️ 수정
+        endDate:         '2025년 6월 7일 (토) 자정', // ✏️ 수정
+        announceDate:    '2025년 6월 9일 (월)',     // ✏️ 수정
+        goodsTitle:      '🛍️ 나눔 굿즈',
+        goodsSub:        '각 굿즈는 1개씩 나눔됩니다',
+        goodsQty:        '1개',
+        goods1Name:      '굿즈 이름 1',  // ✏️ 수정
+        goods1Desc:      '간단한 설명',  // ✏️ 수정
+        goods2Name:      '굿즈 이름 2',  // ✏️ 수정
+        goods2Desc:      '간단한 설명',  // ✏️ 수정
+        goods3Name:      '굿즈 이름 3',  // ✏️ 수정
+        goods3Desc:      '간단한 설명',  // ✏️ 수정
+        goods4Name:      '굿즈 이름 4',  // ✏️ 수정
+        goods4Desc:      '간단한 설명',  // ✏️ 수정
+        stepsTitle:      '📝 참여 방법',
+        step1Title:      '팔로우',
+        step1Desc:       '인스타그램 계정을 팔로우해 주세요',
+        step2Title:      'DM 신청',
+        step2Desc:       '원하는 굿즈 이름을 DM으로 보내주세요',
+        step3Title:      '당첨 확인',
+        step3Desc:       '발표일에 스토리 또는 DM으로 안내드려요',
+        snsTitle:        '📲 신청 채널',
+        noticeTitle:     '📌 유의사항',
+        notice1:         '나눔은 완전 무료이며 배송비도 없습니다',
+        notice2:         '1인 1개 굿즈만 신청 가능합니다',
+        notice3:         '당첨자는 발표일 이후 3일 내 주소를 보내주셔야 합니다',
+        notice4:         '미응답 시 다음 순번으로 넘어갑니다',
+        footerThanks:    '💛 함께해 주셔서 감사해요',
+        ended:           '신청이 마감되었습니다',
+      },
+
+      en: {
+        heroBadge:       'FREE GIVEAWAY',
+        heroTitle:       'Free Goods Giveaway',
+        heroSub:         'Prepared with love for you ✨',
+        countdownLabel:  'Time left',
+        unitDay: 'day', unitHour: 'hr', unitMin: 'min', unitSec: 'sec',
+        periodTitle:     '📅 Event Period',
+        periodStart:     'Start',
+        periodEnd:       'Deadline',
+        periodAnnounce:  'Winners',
+        startDate:       'June 1, 2025 (Sun)',       // ✏️ 수정
+        endDate:         'June 7, 2025 (Sat) midnight', // ✏️ 수정
+        announceDate:    'June 9, 2025 (Mon)',        // ✏️ 수정
+        goodsTitle:      '🛍️ Giveaway Items',
+        goodsSub:        '1 item per person',
+        goodsQty:        'x1',
+        goods1Name:      'Item Name 1',  // ✏️ 수정
+        goods1Desc:      'Short description', // ✏️ 수정
+        goods2Name:      'Item Name 2',  // ✏️ 수정
+        goods2Desc:      'Short description', // ✏️ 수정
+        goods3Name:      'Item Name 3',  // ✏️ 수정
+        goods3Desc:      'Short description', // ✏️ 수정
+        goods4Name:      'Item Name 4',  // ✏️ 수정
+        goods4Desc:      'Short description', // ✏️ 수정
+        stepsTitle:      '📝 How to Join',
+        step1Title:      'Follow',
+        step1Desc:       'Follow our Instagram account',
+        step2Title:      'DM Us',
+        step2Desc:       'Send the item name you want via DM',
+        step3Title:      'Check Winner',
+        step3Desc:       'We\'ll notify via story or DM on announcement day',
+        snsTitle:        '📲 Apply Here',
+        noticeTitle:     '📌 Notes',
+        notice1:         'Completely free — no shipping cost',
+        notice2:         '1 item per person only',
+        notice3:         'Winners must send their address within 3 days',
+        notice4:         'No response = next person gets it',
+        footerThanks:    '💛 Thank you for joining!',
+        ended:           'Registration is closed',
+      },
+
+      id: {
+        heroBadge:       'BAGI-BAGI GRATIS',
+        heroTitle:       'Giveaway Gratis',
+        heroSub:         'Disiapkan dengan tulus untuk kalian ✨',
+        countdownLabel:  'Waktu tersisa',
+        unitDay: 'hari', unitHour: 'jam', unitMin: 'mnt', unitSec: 'dtk',
+        periodTitle:     '📅 Periode Acara',
+        periodStart:     'Mulai',
+        periodEnd:       'Batas Waktu',
+        periodAnnounce:  'Pengumuman',
+        startDate:       '1 Juni 2025 (Ming)',          // ✏️ 수정
+        endDate:         '7 Juni 2025 (Sab) tengah malam', // ✏️ 수정
+        announceDate:    '9 Juni 2025 (Sen)',            // ✏️ 수정
+        goodsTitle:      '🛍️ Item Giveaway',
+        goodsSub:        'Masing-masing 1 item per orang',
+        goodsQty:        'x1',
+        goods1Name:      'Nama Item 1',  // ✏️ 수정
+        goods1Desc:      'Deskripsi singkat', // ✏️ 수정
+        goods2Name:      'Nama Item 2',  // ✏️ 수정
+        goods2Desc:      'Deskripsi singkat', // ✏️ 수정
+        goods3Name:      'Nama Item 3',  // ✏️ 수정
+        goods3Desc:      'Deskripsi singkat', // ✏️ 수정
+        goods4Name:      'Nama Item 4',  // ✏️ 수정
+        goods4Desc:      'Deskripsi singkat', // ✏️ 수정
+        stepsTitle:      '📝 Cara Ikut',
+        step1Title:      'Follow',
+        step1Desc:       'Follow akun Instagram kami',
+        step2Title:      'DM Pendaftaran',
+        step2Desc:       'Kirim nama item yang diinginkan via DM',
+        step3Title:      'Cek Pemenang',
+        step3Desc:       'Kami akan memberi tahu via story atau DM',
+        snsTitle:        '📲 Daftar di Sini',
+        noticeTitle:     '📌 Catatan',
+        notice1:         'Gratis sepenuhnya, termasuk ongkos kirim',
+        notice2:         'Hanya 1 item per orang',
+        notice3:         'Pemenang harus mengirim alamat dalam 3 hari',
+        notice4:         'Tidak ada respons = giliran berikutnya',
+        footerThanks:    '💛 Terima kasih sudah ikut!',
+        ended:           'Pendaftaran telah ditutup',
+      },
+
+      ja: {
+        heroBadge:       '無料プレゼント',
+        heroTitle:       'グッズ無料配布',
+        heroSub:         '大切な皆さんのために準備しました ✨',
+        countdownLabel:  '締め切りまで',
+        unitDay: '日', unitHour: '時間', unitMin: '分', unitSec: '秒',
+        periodTitle:     '📅 開催期間',
+        periodStart:     '開始日',
+        periodEnd:       '締め切り',
+        periodAnnounce:  '当選発表',
+        startDate:       '2025年6月1日（日）',           // ✏️ 수정
+        endDate:         '2025年6月7日（土）深夜',        // ✏️ 수정
+        announceDate:    '2025年6月9日（月）',            // ✏️ 수정
+        goodsTitle:      '🛍️ 配布グッズ',
+        goodsSub:        '各グッズ1点ずつ配布します',
+        goodsQty:        '1点',
+        goods1Name:      'グッズ名 1',    // ✏️ 수정
+        goods1Desc:      '簡単な説明',    // ✏️ 수정
+        goods2Name:      'グッズ名 2',    // ✏️ 수정
+        goods2Desc:      '簡単な説明',    // ✏️ 수정
+        goods3Name:      'グッズ名 3',    // ✏️ 수정
+        goods3Desc:      '簡単な説明',    // ✏️ 수정
+        goods4Name:      'グッズ名 4',    // ✏️ 수정
+        goods4Desc:      '簡単な説明',    // ✏️ 수정
+        stepsTitle:      '📝 参加方法',
+        step1Title:      'フォロー',
+        step1Desc:       'Instagramアカウントをフォローしてください',
+        step2Title:      'DMで申し込む',
+        step2Desc:       '欲しいグッズ名をDMで送ってください',
+        step3Title:      '当選確認',
+        step3Desc:       '発表日にストーリーまたはDMでお知らせします',
+        snsTitle:        '📲 申し込みチャンネル',
+        noticeTitle:     '📌 注意事項',
+        notice1:         '完全無料、送料もかかりません',
+        notice2:         '1人1点のみ申し込み可能です',
+        notice3:         '当選者は発表後3日以内に住所をお送りください',
+        notice4:         '未応答の場合は次の方に移ります',
+        footerThanks:    '💛 ご参加ありがとうございます！',
+        ended:           '申し込みは終了しました',
+      },
+
+      zh: {
+        heroBadge:       '免费赠品',
+        heroTitle:       '免费周边赠送',
+        heroSub:         '为大家精心准备 ✨',
+        countdownLabel:  '距截止',
+        unitDay: '天', unitHour: '时', unitMin: '分', unitSec: '秒',
+        periodTitle:     '📅 活动时间',
+        periodStart:     '开始时间',
+        periodEnd:       '截止时间',
+        periodAnnounce:  '公布结果',
+        startDate:       '2025年6月1日（周日）',          // ✏️ 수정
+        endDate:         '2025年6月7日（周六）午夜',       // ✏️ 수정
+        announceDate:    '2025年6月9日（周一）',           // ✏️ 수정
+        goodsTitle:      '🛍️ 赠品详情',
+        goodsSub:        '每人限领1件',
+        goodsQty:        '×1',
+        goods1Name:      '周边名称 1',   // ✏️ 수정
+        goods1Desc:      '简短描述',     // ✏️ 수정
+        goods2Name:      '周边名称 2',   // ✏️ 수정
+        goods2Desc:      '简短描述',     // ✏️ 수정
+        goods3Name:      '周边名称 3',   // ✏️ 수정
+        goods3Desc:      '简短描述',     // ✏️ 수정
+        goods4Name:      '周边名称 4',   // ✏️ 수정
+        goods4Desc:      '简短描述',     // ✏️ 수정
+        stepsTitle:      '📝 参与方式',
+        step1Title:      '关注账号',
+        step1Desc:       '请关注我们的Instagram账号',
+        step2Title:      'DM申请',
+        step2Desc:       '请通过DM发送您想要的周边名称',
+        step3Title:      '查看结果',
+        step3Desc:       '公布当天将通过Story或DM通知',
+        snsTitle:        '📲 申请渠道',
+        noticeTitle:     '📌 注意事项',
+        notice1:         '完全免费，含邮费',
+        notice2:         '每人仅限申请1件',
+        notice3:         '中奖者须在公布后3天内提供地址',
+        notice4:         '未回复则顺延至下一位',
+        footerThanks:    '💛 感谢您的参与！',
+        ended:           '申请已截止',
+      },
+    };
+
+    /* ===================================================
+       마감일 설정
+       ✏️ 날짜를 수정하세요 (월은 0부터: 6월 = 5)
+    =================================================== */
+    const DEADLINE = new Date(2025, 5, 7, 23, 59, 59);
+
+    /* ===== 언어 전환 ===== */
+    let currentLang = localStorage.getItem('lang') || 'ko';
+
+    function applyLang(lang) {
+      const t = TRANSLATIONS[lang];
+      if (!t) return;
+      currentLang = lang;
+      localStorage.setItem('lang', lang);
+
+      // HTML lang 속성 & 폰트
+      document.documentElement.lang = lang;
+      const fontMap = {
+        ja: "'Noto Sans JP', 'Noto Sans KR', sans-serif",
+        zh: "'Noto Sans SC', 'Noto Sans KR', sans-serif",
+      };
+      document.body.style.fontFamily = fontMap[lang] || "'Noto Sans KR', 'Noto Sans JP', sans-serif";
+
+      // data-i18n 요소 텍스트 교체
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (t[key] !== undefined) el.textContent = t[key];
+      });
+
+      // 활성 버튼 표시
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+
+      // 카운트다운 마감 메시지 갱신
+      const countdownEl = document.getElementById('countdown');
+      if (countdownEl && countdownEl.querySelector('.ended')) {
+        countdownEl.innerHTML = `<span class="ended">${t.ended}</span>`;
+      }
+    }
+
+    // 언어 버튼 이벤트
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+    });
+
+    /* ===== 카운트다운 ===== */
+    function updateCountdown() {
+      const t = TRANSLATIONS[currentLang];
+      const now = new Date();
+      const diff = DEADLINE - now;
+
+      if (diff <= 0) {
+        document.getElementById('countdown').innerHTML =
+          `<span class="ended">${t.ended}</span>`;
+        return;
+      }
+
+      const days  = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const mins  = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const secs  = Math.floor((diff % (1000 * 60)) / 1000);
+
+      document.getElementById('days').textContent  = String(days).padStart(2, '0');
+      document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+      document.getElementById('mins').textContent  = String(mins).padStart(2, '0');
+      document.getElementById('secs').textContent  = String(secs).padStart(2, '0');
+    }
+
+    // 초기 실행
+    applyLang(currentLang);
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+
+</body>
+</html>
