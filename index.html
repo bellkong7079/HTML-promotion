@@ -390,7 +390,9 @@
        마감일 설정
        ✏️ 날짜를 수정하세요 (월은 0부터: 6월 = 5)
     =================================================== */
-    const DEADLINE = new Date(2025, 5, 7, 23, 59, 59);
+    // 인도네시아 서부 표준시 WIB (UTC+7) 기준
+    // 형식: 'YYYY-MM-DDTHH:MM:SS+07:00'  ✏️ 날짜 수정 시 여기만 바꾸세요
+    const DEADLINE = new Date('2025-06-07T23:59:59+07:00');
 
     /* ===== 언어 전환 ===== */
     let currentLang = localStorage.getItem('lang') || 'ko';
